@@ -7,3 +7,13 @@ variable "region" {
     error_message = "Not a valid region."
   }
 }
+
+variable "iam_role_arn" {
+    description = "The ARN of the IAM role to use with Config"
+    type        = string
+}
+
+variable "config_bucket_id" {
+    description = "The ID of the S3 bucket to use with Config"
+    type        = string
+}
