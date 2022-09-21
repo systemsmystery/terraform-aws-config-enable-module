@@ -1,5 +1,5 @@
 resource "aws_iam_role" "config" {
-  name = "Custom-AWS-Config-Role"
+  name = "Custom-AWS-Config-Role-${var.region}"
 
   assume_role_policy = <<POLICY
 {
@@ -19,7 +19,7 @@ POLICY
 }
 
 resource "aws_iam_role_policy" "allow_bucket_acces" {
-  name = "custom-aws-config-policy"
+  name = "custom-aws-config-${var.region}-policy"
   role = aws_iam_role.config.id
 
   policy = <<POLICY
